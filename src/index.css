@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  background-color: #2A0A4A;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 75vh;
+
+}
+
+.col1,
+.col2 {}
+
+.col1 {
+  width: 70%;
+}
+
+.col1Container {
+  margin: 5%;
+  width: 50%;
+  min-width: 350px;
+  height: 90%;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.textHeading1 {
+  font-size: 3rem;
+  color: white
+}
+
+.cryptoDisplay {
+  width: 65%;
+  min-width: 300px;
+}
+
+.textHeading2 {
+  font-size: 1.5rem;
+  color: #837196;
+}
+
+.cryptoList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 30vh;
+  overflow: auto;
+
+}
+
+.cryptoItem {
+  display: flex;
+  border-bottom: 1px solid #837196;
+  padding-top: 1.4vh;
+}
+
+.iconImg {
+  width: 35%;
+  text-align: left;
+}
+
+.cryptoText {
+  width: 75%;
+  text-align: left;
+}
+
+.cryptoRemove {
+  width: 5%;
+  color: #837196;
+  color: white;
+}
+
+.cryptoName {
+  color: white;
+  font-size: larger;
+}
+
+.cryptoAmt {
+  color: #837196;
+  font-size: medium;
+  margin-top: 0.8vh;
+}
+
+.logo {}
+
+.col2 {
+  width: 29%;
+  background-image: url("./assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: 250% 100%;
+}
+
+.whiteBox {
+  height: 200px;
+  width: 26vw;
+  min-width: 300px;
+  background-color: white;
+  border-radius: 6px;
+  margin-top: 15vh;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  text-align: center;
+  position: relative;
+}
+
+.currecyInp {
+  width: 70%;
+  height: 30px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 5px;
+  color: #2A0A4A;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.addButton {
+  width: 70%;
+  height: 28px;
+  background-color: #FD4B24;
+  color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #FD4B24;
+  text-align: center;
+  border-radius: 16px;
+  font-weight: bold;
+}
+
+.conditionText {
+  color: gray;
+  text-align: center;
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  width: 60%;
+  height: 40px;
+  padding: 0% 20% 0% 20%;
+  text-align: center;
+  color: gray
+}
+
+.greenImg {
+  height: 50vh;
+  width: auto;
+}
+
+.greenImgDiv {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 40%;
+  height: 50%;
+  position: relative;
+  top: -50vh;
+}
