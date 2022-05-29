@@ -2,8 +2,16 @@ import React from 'react'
 import logo from '../assets/logo.svg'
 import icon from '../assets/icon.svg'
 import figure from '../assets/figure.png'
+import List from './list/List'
+import AddCrypto from './AddCrypto'
+import { currencyType } from '../App'
 
-export default function Index() {
+interface Iprops {
+    currencyList: currencyType[],
+    setCurrency: React.Dispatch<React.SetStateAction<currencyType[]>>
+}
+
+const Index: React.FC<Iprops> =({currencyList,setCurrency}) => {
   return (
     <>
     <div className="container">
@@ -27,54 +35,7 @@ export default function Index() {
                         Just enter the cryptocurrency code on the form to the right.
                     </span>
                     <br /><br /><br /><br />
-                    <ul className="cryptoList">
-                        <li className="cryptoItem">
-                            <div className="iconImg">
-                                <img src={icon} alt=""/>
-                            </div>
-                            <div className="cryptoText">
-                                <span className="cryptoName"> BTC </span>
-                                <br />
-                                <p className="cryptoAmt"> 7842.37 &euro;</p>
-                            </div>
-                            <div className="cryptoRemove">
-                                <br />
-                                &#10005;
-                            </div>
-                        </li>
-
-
-                        <li className="cryptoItem">
-                            <div className="iconImg">
-                                <img src={icon} alt=""/>
-                            </div>
-                            <div className="cryptoText">
-                                <span className="cryptoName"> BTC </span>
-                                <br />
-                                <p className="cryptoAmt"> 7842.37 &euro;</p>
-                            </div>
-                            <div className="cryptoRemove">
-                                <br />
-                                &#10005;
-                            </div>
-                        </li>
-
-                        <li className="cryptoItem">
-                            <div className="iconImg">
-                                <img src={icon} alt=""/>
-                            </div>
-                            <div className="cryptoText">
-                                <span className="cryptoName"> BTC </span>
-                                <br />
-                                <p className="cryptoAmt"> 7842.37 &euro;</p>
-                            </div>
-                            <div className="cryptoRemove">
-                                <br />
-                                &#10005;
-                            </div>
-                        </li>
-
-                    </ul>
+                    <List currencyList={currencyList} setCurrency={setCurrency} />
                 </div>
 
 
@@ -82,25 +43,7 @@ export default function Index() {
         </div>
 
         <div className="col2">
-            <div className="whiteBox">
-                <br /><br />
-
-                <input type="text" className="currecyInp" placeholder="CRYPTOCURRENCY CODE" />
-
-                <br />
-
-                <button className="addButton">
-                    Add
-                </button>
-
-                <br />
-
-                <div className="conditionText">
-                    Use of this service is subject to terms and conditions.
-                </div>
-
-
-            </div>
+            <AddCrypto  currencyList={currencyList} setCurrency={setCurrency} />
         </div>
     </div>
         
@@ -116,3 +59,5 @@ export default function Index() {
     </>
   )
 }
+
+export default Index;

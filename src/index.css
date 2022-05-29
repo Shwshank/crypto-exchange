@@ -174,3 +174,6 @@ code {
   position: relative;
   top: -50vh;
 }
+.pointer{
+  cursor: pointer;
+}

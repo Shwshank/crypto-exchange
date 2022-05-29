@@ -1,14 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Index from './components/Index';
+import React, { useState, useEffect } from 'react'
+import './App.css'
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
+import Index from './components/Index'
 
-function App() {
-  return (
-    <div className="App">
-      <Index/>
-    </div>
-  );
+export interface currencyType {
+  name: string
+  value: number
 }
 
-export default App;
+export interface currencyListType {
+  list: currencyType[]
+}
+
+const App: React.FC = () => {
+  const [currencyList, setCurrencyList] = useState<currencyListType['list']>([])
+
+  const client = new ApolloClient({
+    uri: 'https://api.blocktap.io/graphql',
+    cache: new InMemoryCache(),
+  })
+
+  return (
+    <ApolloProvider client={client}>
+      <div className="App">
+        <Index currencyList={currencyList} setCurrency={setCurrencyList} />
+      </div>
+    </ApolloProvider>
+  )
+}
+
+export default App
