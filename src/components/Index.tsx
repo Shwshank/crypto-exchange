@@ -6,6 +6,11 @@ import List from './list/List'
 import AddCrypto from './AddCrypto'
 import { currencyType } from '../App'
 
+// List and AddCrypto are two Children components
+//
+// 1. LIST: for rendering the list 
+// 2. ADDCRYPTO: for adding new currency and fetching the value
+
 interface Iprops {
     currencyList: currencyType[],
     setCurrency: React.Dispatch<React.SetStateAction<currencyType[]>>

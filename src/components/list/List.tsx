@@ -26,7 +26,9 @@ const List:React.FC<Iprops> = ({currencyList,setCurrency}) => {
             <div className="cryptoText">
                 <span className="cryptoName"> {currency.name} </span>
                 <br />
-                <p className="cryptoAmt"> {currency.value} &euro;</p>
+                <p className="cryptoAmt"> 
+                { Math.round(currency.value * 100)/100} 
+                &euro;</p>
             </div>
             <div className="cryptoRemove">
                 <br />

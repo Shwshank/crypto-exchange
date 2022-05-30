@@ -11,9 +11,19 @@ interface Iprops {
 
 const AddCrypto: React.FC<Iprops> =({currencyList, setCurrency}) => {
 
+  // user will update the crypto name 
   const [name, setName] = useState('')
+
+  // GraphQl useLazy Query to perform data fetching on some action
+  // getCurrency will be called for data fetching if
+  //
+  //1. if Crypto is not present in the list
+  
   const [getCurrency, { loading, data }] = useLazyQuery(CURRENCY_QUERY)
 
+  // if some data in the query,
+  // new key value pair will be added to the list currencyList
+  // if data not available, some msg in alert
   useEffect(()=>{
 
     if(data && name){
@@ -31,10 +41,15 @@ const AddCrypto: React.FC<Iprops> =({currencyList, setCurrency}) => {
     }
   },[data])
 
+  // Update name as per the input value
+  // Change listner
   const updateName = (e: React.ChangeEvent<HTMLInputElement>)=>{
     setName(e.target.value)
   }
 
+  // function checkCurrency() will check
+  // 1. if crypto already present in the list
+  // 2. if not, make query to get the value
   const checkCurrency = (): void=>{
     let flag = false
     flag = currencyList.some((cur: currencyType)=>{
